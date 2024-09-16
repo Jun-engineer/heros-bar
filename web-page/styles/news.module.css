@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    font-family: sans-serif;
+    text-align: center;
+    height: 30vh;
+}
+
+.container div {
+    height: 100%;
+    text-align: left;
+}
