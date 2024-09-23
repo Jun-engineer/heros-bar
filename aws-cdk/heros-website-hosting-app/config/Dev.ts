@@ -8,4 +8,5 @@ export const common = {
   region: 'ap-northeast-1',
   systemName: system,
   environment: env,
+  hostName: 'dev'
 };

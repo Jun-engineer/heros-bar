@@ -19,11 +19,11 @@ export class HerosWebsiteHostingStack extends cdk.Stack {
     });
 
     // cdk-nagエラー抑止
-    NagSuppressions.addResourceSuppressions(this,
-      [
-        {id: "", reason: '', appliesTo: [""]}
-      ],
-      true,
-    );
+    // NagSuppressions.addResourceSuppressions(this,
+    //   [
+    //     {id: "", reason: '', appliesTo: [""]}
+    //   ],
+    //   true,
+    // );
   }
 }
