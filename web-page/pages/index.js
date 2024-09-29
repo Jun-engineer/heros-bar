@@ -64,16 +64,15 @@ export default function Home() {
       {/* Concept Section */}
       <section className="section concept-section" id="concept">
         <h2 className="section-title">CONCEPT</h2>
-        <p className="section-subtitle">スポーツを楽しめるバー</p>
+        <p className="section-subtitle">スポーツを感じ、仲間と繋がる特別な場所</p>
         <div className="concept-content">
           <div className="concept-text">
+            <p>Hero's Barは、スポーツを愛する全ての人に開かれた空間です。</p>
             <p>
-              居心地が良い空間で、スポーツを楽しむ場所を提供。<br/>
-              お酒をもちろん、充実したフードメニューもご用意しております。
+              大画面で観戦する迫力、アツい瞬間を共有する喜び、そしてリラックスできる雰囲気を提供しています。<br/>
+              スポーツと共に、思い出に残るひとときをお楽しみください。
             </p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
+            <p>充実したフードメニューと多彩なドリンクで、誰もが楽しめるスポットへようこそ。</p>
           </div>
           <Image 
             src="/image/concept.jpg" 
@@ -91,7 +90,7 @@ export default function Home() {
       {/* Party Section */}
       <section className="section party-section" id="party">
         <h2 className="section-title">PARTY</h2>
-        <p className="section-subtitle">貸し切りでのパーティーも</p>
+        <p className="section-subtitle">特別な一日を、特別な場所で</p>
         <div className="party-content">
           <Image 
             src="/image/party.jpg" 
@@ -102,12 +101,11 @@ export default function Home() {
           />
           <div className="party-text">
             <p>
-              当店は貸し切りのも対応可能です。<br />
-              お気軽にお問い合わせください。
+              Hero's Barでは、貸し切りのパーティーにも対応しています。<br />
+              大切な仲間と共に過ごす歓喜の時間を、贅沢な空間で彩りませんか？
             </p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
-            <p>なんとかなんとか、なんとかなんとか。</p>
+            <p>誕生日パーティー、スポーツ観戦イベント、会社の集まりなど、どんなシーンでも最高のひとときを演出いたします。</p>
+            <p>ご希望に合わせたプランをご提案いたしますので、ぜひお気軽にご相談ください。</p>
           </div>
         </div>
       </section>
@@ -180,7 +178,7 @@ export default function Home() {
             <div className="info-label-box">アクセス</div>
             <div className="info-map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7038780073246!2d139.7594530154818!3d35.675937680195716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf6225f79d5%3A0xb7c7b56e37367b88!2z5pel5pys44CB44CSMTAwLTAwNTIg5p2x5Lqs6YO95riv5Yy65p2x5Lqs5Y-w77yS5LiB55uu77yS77yS4oiS77yS77yR!5e0!3m2!1sja!2sjp!4v1696230755939!5m2!1sja!2sjp"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414871.785977052!2d139.1831746734375!3d35.672426099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bc5bdf90b7b%3A0x36f24528a2682797!2sHERO&#39;S!5e0!3m2!1sen!2sjp!4v1727628147933!5m2!1sen!2sjp"
                 width="100%"
                 height="300"
                 style={{ border: '0' }}

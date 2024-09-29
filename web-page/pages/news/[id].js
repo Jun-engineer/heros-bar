@@ -14,11 +14,16 @@ const NewsDetail = () => {
     return <p>News not found</p>;
   }
 
+  // Format the content to display line breaks
+  const formatContent = (text) => {
+    return text.split('\n').map((line, index) => <span key={index}>{line}<br /></span>);
+  };
+
   return (
     <div className="news-detail-container">
       <h1>{newsItem.title}</h1>
       <p className="news-date">{newsItem.date}</p>
-      <p>{newsItem.content}</p>
+      <p>{formatContent(newsItem.content)}</p>
 
       <Link href="/news" className="back-link">Back to All News</Link>
       <Link href="/#news" className="back-link">Back to Home</Link>
