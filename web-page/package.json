@@ -1,5 +1,5 @@
 {
-  "name": "heros_bar",
+  "name": "restaurant-homepage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,24 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@fullcalendar/core": "^6.1.15",
-    "@fullcalendar/daygrid": "^6.1.15",
-    "@fullcalendar/list": "^6.1.15",
-    "@fullcalendar/react": "^6.1.15",
-    "@fullcalendar/timegrid": "^6.1.15",
-    "@splidejs/react-splide": "^0.7.12",
-    "@splidejs/splide": "^4.1.4",
-    "next": "14.2.4",
-    "next-transpile-modules": "^10.0.1",
-    "postcss": "^8.4.45",
-    "postcss-loader": "^8.1.1",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
-    "splide-nextjs": "^2.4.23"
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.2.4"
+    "eslint-config-next": "14.2.13"
   }
 }

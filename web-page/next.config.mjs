@@ -1,12 +1,6 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-    transpilePackages: [
-        "awesome_module",
-        "@fullcalendar/common",
-        "@fullcalendar/daygrid",
-        "@fullcalendar/react",
-    ],
-}
+  reactStrictMode: true,
+};
 
 export default nextConfig;

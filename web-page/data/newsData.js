@@ -1,0 +1,26 @@
+// This file contains the mock data for news items
+export const newsData = [
+    { id: 1, title: "Holiday Closure Announcement", date: "2024-09-10", content: "We will be closed for the holidays from Oct 1 to Oct 5." },
+    { id: 2, title: "New Year's Eve Party", date: "2024-08-25", content: "Join us for a special event on New Year's Eve!" },
+    { id: 3, title: "New Menu Items", date: "2024-07-12", content: "We’ve added new dishes to our menu. Come check them out!" },
+    { id: 4, title: "Charity Event", date: "2024-06-30", content: "A special charity event will be held on July 15. All are welcome." },
+    { id: 5, title: "Live Sports Broadcast", date: "2024-06-12", content: "Catch the live football match on our big screens this Sunday!" },
+    { id: 6, title: "Special Discount Week", date: "2024-05-01", content: "Enjoy discounts on all beverages from May 10-15." },
+    { id: 7, title: "Halloween Party", date: "2024-04-15", content: "Come in your best costume for our Halloween party!" },
+    { id: 8, title: "Monthly Wine Tasting", date: "2024-03-21", content: "Our monthly wine tasting event will be held on April 5." },
+    { id: 9, title: "St. Patrick's Day Celebration", date: "2024-02-16", content: "Celebrate St. Patrick's Day with us on March 17!" },
+    { id: 10, title: "New Year Opening", date: "2024-01-10", content: "We are open for the new year with exciting offers." },
+    { id: 11, title: "Special Brunch on Weekends", date: "2023-12-25", content: "Enjoy a special brunch every Saturday and Sunday from 11 AM to 2 PM." },
+    { id: 12, title: "Holiday Closure Announcement", date: "2024-09-10", content: "We will be closed for the holidays from Oct 1 to Oct 5." },
+    { id: 13, title: "New Year's Eve Party", date: "2024-08-25", content: "Join us for a special event on New Year's Eve!" },
+    { id: 14, title: "New Menu Items", date: "2024-07-12", content: "We’ve added new dishes to our menu. Come check them out!" },
+    { id: 15, title: "Charity Event", date: "2024-06-30", content: "A special charity event will be held on July 15. All are welcome." },
+    { id: 16, title: "Live Sports Broadcast", date: "2024-06-12", content: "Catch the live football match on our big screens this Sunday!" },
+    { id: 17, title: "Special Discount Week", date: "2024-05-01", content: "Enjoy discounts on all beverages from May 10-15." },
+    { id: 18, title: "Halloween Party", date: "2024-04-15", content: "Come in your best costume for our Halloween party!" },
+    { id: 19, title: "Monthly Wine Tasting", date: "2024-03-21", content: "Our monthly wine tasting event will be held on April 5." },
+    { id: 20, title: "St. Patrick's Day Celebration", date: "2024-02-16", content: "Celebrate St. Patrick's Day with us on March 17!" },
+    { id: 21, title: "New Year Opening", date: "2024-01-10", content: "We are open for the new year with exciting offers." },
+    { id: 22, title: "Special Brunch on Weekends", date: "2023-12-25", content: "Enjoy a special brunch every Saturday and Sunday from 11 AM to 2 PM." },
+  ];
+  

@@ -1,0 +1,444 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #e5e5e5;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 30px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ccc;
+}
+
+/* インスタグラムアイコンのスタイリング */
+.instagram-icon {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.instagram-icon:hover {
+  color: #ccc;
+}
+
+/* Separator Styling */
+.separator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: relative;
+}
+
+.separator-bar {
+  width: 30px;
+  height: 100%;
+  background-color: #000;
+}
+
+/* Hero Section Full-Screen Image */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide Show Settings */
+.slide {
+  height: 100vh;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Concept Section Styling */
+.concept-section {
+  background-color: #e5e5e5;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.concept-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.concept-text {
+  flex: 1;
+  max-width: 500px;
+  padding-right: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.concept-image {
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .concept-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .concept-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .concept-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Party Section Styling */
+.party-section {
+  background-color: #e5e5e5;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.party-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.party-text {
+  flex: 1;
+  max-width: 500px;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.party-image {
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .party-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .party-text {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .party-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Menu Section */
+.menu-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-image {
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-label {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* News Section Styling */
+.news-section {
+  padding: 50px 0;
+  background-color: #e5e5e5;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.news-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+}
+
+.news-date {
+  color: gray;
+  font-size: 0.9rem;
+  min-width: 100px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.news-title {
+  color: #0070f3;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.news-title:hover {
+  text-decoration: underline;
+}
+
+.view-all-news {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.view-all-news:hover {
+  text-decoration: underline;
+}
+
+/* News Page */
+.news-page-container {
+  padding: 50px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.back-to-home {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+/* News Detail Page */
+.news-detail-container {
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-detail-container h1 {
+  margin-bottom: 10px;
+}
+
+.news-detail-container .news-date {
+  color: gray;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.news-detail-container p {
+  line-height: 1.6;
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #0070f3;
+  color: #fff;
+  border-color: #0070f3;
+}
+
+/* Info Section Styling */
+.info-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 0 50px;
+}
+
+.info-left, .info-right {
+  flex-basis: 40%;
+}
+
+.info-left {
+  text-align: left;
+  margin-right: 20px;
+}
+
+.info-right {
+  text-align: left;
+  flex-basis: 30%;
+}
+
+.info-right .info-access {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-map {
+  border: 1px solid #333;
+  width: 100%;
+  height: 200px;
+}
+
+.info-left p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #000;
+  padding: 20px 40px;
+  text-align: right;
+}
+
+.footer-text {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+}
