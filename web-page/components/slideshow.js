@@ -20,26 +20,26 @@ const Slideshow = () => {
       <Slider {...settings}  className="hero-image">
         <div className="slide">
           <Image 
-            src="/bar.jpg"
+            src="/image/bar.jpg"
             alt="Bar"
-            width={1000}
-            height={900}
+            width={1920}
+            height={1080}
           />
         </div>
         <div className="slide">
           <Image
-            src="/concept.jpg"
+            src="/image/concept.jpg"
             alt="Concept"
-            width={1000}
-            height={900}
+            width={1920}
+            height={1080}
           />
         </div>
         <div className="slide">
           <Image
-            src="/party.jpg"
+            src="/image/party.jpg"
             alt="Party"
-            width={1000}
-            height={900}
+            width={1920}
+            height={1080}
           />
         </div>
       </Slider>
