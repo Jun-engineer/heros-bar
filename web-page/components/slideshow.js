@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -18,13 +19,28 @@ const Slideshow = () => {
     <section className="hero">
       <Slider {...settings}  className="hero-image">
         <div className="slide">
-          <img src="/bar.jpg" alt="Bar" />
+          <Image 
+            src="/bar.jpg"
+            alt="Bar"
+            width={1000}
+            height={900}
+          />
         </div>
         <div className="slide">
-          <img src="/concept.jpg" alt="Concept" />
+          <Image
+            src="/concept.jpg"
+            alt="Concept"
+            width={1000}
+            height={900}
+          />
         </div>
         <div className="slide">
-          <img src="/party.jpg" alt="Party" />
+          <Image
+            src="/party.jpg"
+            alt="Party"
+            width={1000}
+            height={900}
+          />
         </div>
       </Slider>
     </section>

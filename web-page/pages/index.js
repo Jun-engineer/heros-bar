@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Slideshow from '../components/slideshow';
@@ -18,25 +19,25 @@ export default function Home() {
       {/* Navigation Bar */}
       <nav className="navbar">
         <div className="navbar-logo">
-          <a href="/">
+          <Link href="/">
             <Image 
               src="/logo.jpg" 
               alt="Restaurant Logo" 
               width={100} 
               height={50} 
             />
-          </a>
+          </Link>
         </div>
         <ul className="navbar-links">
-          <li><a href="#concept">CONCEPT</a></li>
-          <li><a href="#party">PARTY</a></li>
-          <li><a href="#menu">MENU</a></li>
-          <li><a href="#news">NEWS</a></li>
-          <li><a href="#info">INFO</a></li>
+          <li><Link href="#concept">CONCEPT</Link></li>
+          <li><Link href="#party">PARTY</Link></li>
+          <li><Link href="#menu">MENU</Link></li>
+          <li><Link href="#news">NEWS</Link></li>
+          <li><Link href="#info">INFO</Link></li>
           <li>
-            <a href="https://www.instagram.com/heros_2024/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com/heros_2024/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} size="lg" className="instagram-icon" />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -115,7 +116,7 @@ export default function Home() {
               height={140}
               className="menu-image"
             />
-            <a href="/drink-menu.pdf" target="_blank" className="menu-label">フードメニュー</a>
+            <Link href="/drink-menu.pdf" target="_blank" className="menu-label">フードメニュー</Link>
           </div>
 
           <div className="menu-item">
@@ -126,7 +127,7 @@ export default function Home() {
               height={140}
               className="menu-image"
             />
-            <a href="/drink-menu.pdf" target="_blank" className="menu-label">ドリンクメニュー</a>
+            <Link href="/drink-menu.pdf" target="_blank" className="menu-label">ドリンクメニュー</Link>
           </div>
         </div>
       </section>

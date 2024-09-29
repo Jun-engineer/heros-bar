@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { newsData } from '../../data/newsData'; // Import the same news data
 
@@ -19,8 +20,8 @@ const NewsDetail = () => {
       <p className="news-date">{newsItem.date}</p>
       <p>{newsItem.content}</p>
 
-      <a href="/news" className="back-link">Back to All News</a>
-      <a href="/#news" className="back-link">Back to Home</a>
+      <Link href="/news" className="back-link">Back to All News</Link>
+      <Link href="/#news" className="back-link">Back to Home</Link>
     </div>
   );
 };
