@@ -117,7 +117,7 @@ body, html {
     flex-direction: column;
     position: absolute;
     top: 60px;
-    left: 0;
+    right: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
@@ -165,6 +165,16 @@ body, html {
   width: 30px;
   height: 100%;
   background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .separator {
+    height: 40px;
+  }
+
+  .separator-bar {
+    width: 20px;
+  }
 }
 
 /* Hero Section Full-Screen Image */
@@ -265,7 +275,7 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Media Query for Mobile */
+/* Concept Media Query for Mobile */
 @media (max-width: 768px) {
   .concept-content {
     flex-direction: column;
@@ -273,7 +283,6 @@ body, html {
   }
 
   .concept-text {
-    padding-right: 0;
     margin-bottom: 20px;
   }
 
@@ -320,7 +329,6 @@ body, html {
   }
 
   .party-text {
-    padding-left: 0;
     margin-top: 20px;
   }
 
@@ -584,4 +592,11 @@ body, html {
   color: #fff;
   font-size: 14px;
   margin: 0;
+}
+
+/* Footer Media Query for Moblie */
+@media (max-width: 768px) {
+  .footer-text {
+    font-size: 9px;
+  }
 }

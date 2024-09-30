@@ -1,6 +1,7 @@
+import Head from 'next/head';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { newsData } from '../data/newsData'; // Import the news data
+import { newsData } from '../data/newsData';
 
 const NewsPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -22,6 +23,27 @@ const NewsPage = () => {
 
   return (
     <div className="news-page-container">
+      <Head>
+        <link rel="icon" href="/image/favicon.ico" />
+        <link rel="apple-touch-icon" href="/image/logo.jpg" />
+        <title>News - Hero&#39;s</title>
+        <meta name="description" content="Hero&#39;sの最新のお知らせやイベント情報を確認できます。" />
+        <meta property="og:title" content="Hero&#39;s News" />
+        <meta property="og:description" content="Hero&#39;sの最新のお知らせをチェックしましょう。" />
+        <meta property="og:image" content="/image/logo.jpg" />
+        <meta property="og:url" content="https://d2ynp8qdcw1ah8.cloudfront.net/news" />
+
+        {/* 構造化データ */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "News - Hero&#39;s",
+            "description": "Hero&#39;sの最新のお知らせやイベント情報を集めたページです。",
+            "url": "https://d2ynp8qdcw1ah8.cloudfront.net/news"
+          })}
+        </script>
+      </Head>
       <h2 className="section-title">All NEWS</h2>
       <div className="news-list">
         {currentNews.map(item => (

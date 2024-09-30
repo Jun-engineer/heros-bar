@@ -17,7 +17,7 @@ const Slideshow = () => {
 
   return (
     <section className="hero">
-      <Slider {...settings}  className="hero-image">
+      <Slider {...settings} className="hero-image">
         <div className="slide">
           <Image 
             src="/image/bar.jpg"
@@ -36,7 +36,7 @@ const Slideshow = () => {
         </div>
         <div className="slide">
           <Image
-            src="/image/party.jpg"
+            src="/image/party2.jpg"
             alt="Party"
             width={1920}
             height={1080}

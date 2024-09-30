@@ -1,6 +1,7 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { newsData } from '../../data/newsData'; // Import the same news data
+import { newsData } from '../../data/newsData';
 
 const NewsDetail = () => {
   const router = useRouter();
@@ -20,14 +21,42 @@ const NewsDetail = () => {
   };
 
   return (
-    <div className="news-detail-container">
-      <h1>{newsItem.title}</h1>
-      <p className="news-date">{newsItem.date}</p>
-      <p>{formatContent(newsItem.content)}</p>
+    <>
+      <Head>
+        <link rel="icon" href="/image/favicon.ico" />
+        <link rel="apple-touch-icon" href="/image/logo.jpg" />
+        <title>{newsItem.title} - Hero&#39;s</title>
+        <meta name="description" content={newsItem.contents} />
+        <meta property="og:title" content={newsItem.title} />
+        <meta property="og:description" content={newsItem.contents} />
+        <meta property="og:image" content="/image/logo.jpg" />
+        <meta property="og:url" content={`https://d2ynp8qdcw1ah8.cloudfront.net/news/${newsItem.id}`} />
 
-      <Link href="/news" className="back-link">Back to All News</Link>
-      <Link href="/#news" className="back-link">Back to Home</Link>
-    </div>
+        {/* 構造化データ */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": newsItem.title,
+            "datePublished": newsItem.date,
+            "articleBody": newsItem.contents,
+            "author": {
+              "@type": "Person",
+              "name": "Hero&#39;s"
+            },
+            "url": `https://d2ynp8qdcw1ah8.cloudfront.net/news/${newsItem.id}`
+          })}
+        </script>
+      </Head>
+      <div className="news-detail-container">
+        <h1>{newsItem.title}</h1>
+        <p className="news-date">{newsItem.date}</p>
+        <p>{formatContent(newsItem.content)}</p>
+
+        <Link href="/news" className="back-link">Back to All News</Link>
+        <Link href="/#news" className="back-link">Back to Home</Link>
+      </div>
+    </>
   );
 };
 
