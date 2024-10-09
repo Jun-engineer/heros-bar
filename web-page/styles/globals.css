@@ -152,31 +152,6 @@ body, html {
   color: #ccc;
 }
 
-/* Separator Styling */
-.separator {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  position: relative;
-}
-
-.separator-bar {
-  width: 30px;
-  height: 100%;
-  background-color: #000;
-}
-
-@media (max-width: 768px) {
-  .separator {
-    height: 40px;
-  }
-
-  .separator-bar {
-    width: 20px;
-  }
-}
-
 /* Hero Section Full-Screen Image */
 .hero {
   position: relative;

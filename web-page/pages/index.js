@@ -8,13 +8,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Slideshow from '../components/slideshow';
 import NewsSection from '../components/newsSection';
 
-const Separator = () => (
-  <div className="separator">
-    <span className="separator-bar"></span>
-    <span className="separator-bar"></span>
-  </div>
-);
-
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -48,7 +41,7 @@ export default function Home() {
               "addressCountry": "JP"
             },
             "telephone": "03-3528-8266",
-            "openingHours": "Mon-Sat 11:00-23:00",
+            "openingHours": "Mon-Sat 11:00-14:00 and 17:00-23:00",
             "URL": "https://d2ynp8qdcw1ah8.cloudfront.net/"
           })}
         </script>
@@ -89,21 +82,14 @@ export default function Home() {
       {/* Hero Section */}
       <Slideshow />
 
-      {/* Insert separator between sections */}
-      <Separator />
-
       {/* Concept Section */}
       <section className="section concept-section" id="concept">
         <h2 className="section-title">CONCEPT</h2>
-        <p className="section-subtitle">スポーツを感じ、仲間と繋がる特別な場所</p>
+        <p className="section-subtitle">「興奮」と「感動」を呼ぶスポーツバー</p>
         <div className="concept-content">
           <div className="concept-text">
-            <p>Hero&#39;sは、スポーツを愛する全ての人に開かれた空間です。</p>
-            <p>
-              大画面で観戦する迫力、アツい瞬間を共有する喜び、そしてリラックスできる雰囲気を提供しています。<br/>
-              スポーツと共に、思い出に残るひとときをお楽しみください。
-            </p>
-            <p>充実したフードメニューと多彩なドリンクで、誰もが楽しめるスポットへようこそ。</p>
+            <p>3つの大型モニターで迫力のあるスポーツ観戦、アツい瞬間を共有できる喜び、そしてリラックスできる雰囲気を提供しています。</p>
+            <p>野球だけではなく、あらゆるスポーツを全員で楽しめる最高のスポットへようこそ。</p>
           </div>
           <Image 
             src="/image/concept.jpg" 
@@ -114,9 +100,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      {/* Insert separator between sections */}
-      <Separator />
 
       {/* Party Section */}
       <section className="section party-section" id="party">
@@ -140,9 +123,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Insert separator between sections */}
-      <Separator />
 
       {/* Menu Section */}
       <section className="section menu-section" id="menu">
@@ -175,14 +155,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Insert separator between sections */}
-      <Separator />
-
       {/* News Section */}
       <NewsSection />
-
-      {/* Insert separator between sections */}
-      <Separator />
 
       {/* Info Section */}
       <section className="section info-section" id="info">
@@ -191,8 +165,9 @@ export default function Home() {
           <div className="info-left">
             <div className="info-label-box">営業時間</div>
             <p>
-              ランチ 11:00 - 14:00<br />
-              ディナー 17:00 - 23:00
+              ランチ　 11:00 - 14:00<br />
+              ディナー 17:00 - 23:00<br />
+              ※日曜日定休日
             </p>
 
             <div className="info-label-box">電話番号</div>
@@ -202,7 +177,7 @@ export default function Home() {
             <p>heroscafeandsportsbar@gmail.com</p>
 
             <div className="info-label-box">住所</div>
-            <p>東京都千代田区有楽町１-2-14</p>
+            <p>東京都千代田区有楽町１-2-14 紫ビル1F</p>
           </div>
 
           <div className="info-right">
@@ -221,7 +196,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Footer Section */}
       <footer className="footer">
