@@ -82,6 +82,10 @@ export default function Home() {
       {/* Hero Section */}
       <Slideshow />
 
+      <div className="produce-text">
+        元千葉ロッテマリーンズ所属 小林宏之選手プロデュース
+      </div>
+
       {/* Concept Section */}
       <section className="section concept-section" id="concept">
         <h2 className="section-title">CONCEPT</h2>
