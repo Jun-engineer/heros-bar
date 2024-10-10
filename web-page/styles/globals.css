@@ -192,6 +192,7 @@ body, html {
   }
 }
 
+/* Produce Text */
 .produce-text {
   font-family: 'Roboto Slab', serif;
   font-size: 26px;
@@ -200,6 +201,14 @@ body, html {
   font-weight: bold;
   font-style: italic;
   margin: 40px 0;
+}
+
+/* Produce Text Media Query for Mobile */
+@media (max-width: 768px) {
+  .produce-text {
+    font-size: 18px;
+    margin: 20px 0;
+  }
 }
 
 /* Concept Section Styling */

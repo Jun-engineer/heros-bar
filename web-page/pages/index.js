@@ -82,6 +82,7 @@ export default function Home() {
       {/* Hero Section */}
       <Slideshow />
 
+      {/* Produce Section */}
       <div className="produce-text">
         元千葉ロッテマリーンズ所属 小林宏之選手プロデュース
       </div>
