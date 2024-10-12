@@ -18,18 +18,17 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <link rel="icon" href="/image/favicon.ico" />
-        <link rel="apple-touch-icon" href="/image/logo.jpg" />
+        <link rel="icon" type="image/jpg" href="/image/favicon.ico" />
+        <link rel="apple-touch-icon" href="/image/favicon.jpg" />
         <title>Hero&#39;s</title>
         <meta name="description" content="Hero&#39;sは、スポーツを楽しむための居心地の良いスポットです。大画面でのスポーツ観戦と多彩なフードメニューを提供します。" />
         <meta property="og:title" content="Hero&#39;s" />
         <meta property="og:description" content="Hero&#39;sは、スポーツを楽しむための居心地の良いスポットです。" />
-        <meta property="og:image" content="/image/logo.jpg" />
+        <meta property="og:image" content="/image/favicon.jpg" />
         <meta property="og:url" content="https://d2ynp8qdcw1ah8.cloudfront.net/" />
       </Head>
 
-      {/* Navigation Bar */}
-      <nav className="navbar">
+    <nav className="navbar">
         <div className="navbar-logo">
           <Link href="/">
             <Image 
@@ -43,7 +42,12 @@ export default function Home() {
 
         {/* Hamburger Menu */}
         <div className="hamburger" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} size="lg" />
+          <Image
+                src="/image/hamburger.svg" 
+                alt="Hamburger" 
+                width={25} 
+                height={25} 
+              />
         </div>
 
         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
@@ -54,7 +58,13 @@ export default function Home() {
           <li><Link href="#info">INFO</Link></li>
           <li>
             <Link href="https://www.instagram.com/heros_2024/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} size="lg" className="instagram-icon" />
+              <Image 
+                className="instagram-icon"
+                src="/image/instagram.svg" 
+                alt="Instagram" 
+                width={25} 
+                height={25} 
+              />
             </Link>
           </li>
         </ul>

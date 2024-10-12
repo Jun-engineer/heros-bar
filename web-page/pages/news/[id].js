@@ -24,12 +24,12 @@ const NewsDetail = () => {
     <>
       <Head>
         <link rel="icon" href="/image/favicon.ico" />
-        <link rel="apple-touch-icon" href="/image/logo.jpg" />
+        <link rel="apple-touch-icon" href="/image/favicon.jpg" />
         <title>{newsItem.title} - Hero&#39;s</title>
         <meta name="description" content={newsItem.contents} />
         <meta property="og:title" content={newsItem.title} />
         <meta property="og:description" content={newsItem.contents} />
-        <meta property="og:image" content="/image/logo.jpg" />
+        <meta property="og:image" content="/image/favicon.jpg" />
         <meta property="og:url" content={`https://d2ynp8qdcw1ah8.cloudfront.net/news/${newsItem.id}`} />
       </Head>
       <div className="news-detail-container">

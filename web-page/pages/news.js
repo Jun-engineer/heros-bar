@@ -21,12 +21,12 @@ const NewsPage = () => {
     <div className="news-page-container">
       <Head>
         <link rel="icon" href="/image/favicon.ico" />
-        <link rel="apple-touch-icon" href="/image/logo.jpg" />
+        <link rel="apple-touch-icon" href="/image/favicon.jpg" />
         <title>News - Hero&#39;s</title>
         <meta name="description" content="Hero&#39;sの最新のお知らせやイベント情報を確認できます。" />
         <meta property="og:title" content="Hero&#39;s News" />
         <meta property="og:description" content="Hero&#39;sの最新のお知らせをチェックしましょう。" />
-        <meta property="og:image" content="/image/logo.jpg" />
+        <meta property="og:image" content="/image/favicon.jpg" />
         <meta property="og:url" content="https://d2ynp8qdcw1ah8.cloudfront.net/news" />
       </Head>
       <h2 className="section-title">All NEWS</h2>
