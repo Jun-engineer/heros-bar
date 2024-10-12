@@ -18,33 +18,14 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <link rel="icon" href="/image/favicon.ico" />
+        <link rel="apple-touch-icon" href="/image/logo.jpg" />
         <title>Hero&#39;s</title>
         <meta name="description" content="Hero&#39;sは、スポーツを楽しむための居心地の良いスポットです。大画面でのスポーツ観戦と多彩なフードメニューを提供します。" />
         <meta property="og:title" content="Hero&#39;s" />
         <meta property="og:description" content="Hero&#39;sは、スポーツを楽しむための居心地の良いスポットです。" />
         <meta property="og:image" content="/image/logo.jpg" />
         <meta property="og:url" content="https://d2ynp8qdcw1ah8.cloudfront.net/" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Restaurant",
-            "name": "Hero&#39;s",
-            "description": "スポーツを楽しむための居心地の良いスポット。",
-            "image": "/image/logo.jpg",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "東京都千代田区有楽町１-2-14",
-              "addressLocality": "千代田区",
-              "addressRegion": "東京都",
-              "postalCode": "100-0006",
-              "addressCountry": "JP"
-            },
-            "telephone": "03-3528-8266",
-            "openingHours": "Mon-Sat 11:00-14:00 and 17:00-23:00",
-            "URL": "https://d2ynp8qdcw1ah8.cloudfront.net/"
-          })}
-        </script>
       </Head>
 
       {/* Navigation Bar */}
@@ -84,7 +65,7 @@ export default function Home() {
 
       {/* Produce Section */}
       <div className="produce-text">
-        元千葉ロッテマリーンズ所属 小林宏之選手プロデュース
+        元千葉ロッテマリーンズ所属 <span className="break-on-mobile">小林宏之選手プロデュース</span>
       </div>
 
       {/* Concept Section */}

@@ -6,19 +6,15 @@ import { newsData } from '../data/newsData';
 const NewsPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const newsPerPage = 20;
-  
-    // idが大きい順に並べ替え
+
     const sortedNews = [...newsData].sort((a, b) => b.id - a.id);
   
-    // 現在のページのニュースを取得
     const indexOfLastNews = currentPage * newsPerPage;
     const indexOfFirstNews = indexOfLastNews - newsPerPage;
     const currentNews = sortedNews.slice(indexOfFirstNews, indexOfLastNews);
   
-    // 総ページ数を計算
     const totalPages = Math.ceil(sortedNews.length / newsPerPage);
   
-    // ページ変更ハンドラ
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -32,17 +28,6 @@ const NewsPage = () => {
         <meta property="og:description" content="Hero&#39;sの最新のお知らせをチェックしましょう。" />
         <meta property="og:image" content="/image/logo.jpg" />
         <meta property="og:url" content="https://d2ynp8qdcw1ah8.cloudfront.net/news" />
-
-        {/* 構造化データ */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "News - Hero&#39;s",
-            "description": "Hero&#39;sの最新のお知らせやイベント情報を集めたページです。",
-            "url": "https://d2ynp8qdcw1ah8.cloudfront.net/news"
-          })}
-        </script>
       </Head>
       <h2 className="section-title">All NEWS</h2>
       <div className="news-list">

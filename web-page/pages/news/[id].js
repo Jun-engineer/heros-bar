@@ -31,22 +31,6 @@ const NewsDetail = () => {
         <meta property="og:description" content={newsItem.contents} />
         <meta property="og:image" content="/image/logo.jpg" />
         <meta property="og:url" content={`https://d2ynp8qdcw1ah8.cloudfront.net/news/${newsItem.id}`} />
-
-        {/* 構造化データ */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "headline": newsItem.title,
-            "datePublished": newsItem.date,
-            "articleBody": newsItem.contents,
-            "author": {
-              "@type": "Person",
-              "name": "Hero&#39;s"
-            },
-            "url": `https://d2ynp8qdcw1ah8.cloudfront.net/news/${newsItem.id}`
-          })}
-        </script>
       </Head>
       <div className="news-detail-container">
         <h1>{newsItem.title}</h1>
