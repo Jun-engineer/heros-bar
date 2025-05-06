@@ -1,12 +1,10 @@
-// @(#)heros-website-hosting-stack.ts
+// @(#)heros-website-hosting.ts
 
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { NagSuppressions } from 'cdk-nag';
-import * as acm from 'aws-cdk-lib/aws-certificatemanager'
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as cloudfront_origins from 'aws-cdk-lib/aws-cloudfront-origins';
-import * as route53 from 'aws-cdk-lib/aws-route53';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 
 interface HerosWebsiteHostingProps {
@@ -24,111 +22,82 @@ export class HerosWebsiteHosting extends Construct {
       props.sysName,
     )
 
-    /* S3バケット */
-    // S3サーバーアクセスログバケット
-    const serverAccessLogBucket = new s3.Bucket(this, 'ServerAccessLogBucket', {
-      accessControl: s3.BucketAccessControl.LOG_DELIVERY_WRITE,
-      blockPublicAccess: new s3.BlockPublicAccess({
-        blockPublicAcls: true,
-        blockPublicPolicy: true,
-        ignorePublicAcls: true,
-        restrictPublicBuckets: true,
-      }),
-      bucketName: `${props.envName}-heros-s3-accesslog-bucket`,
-      encryption: s3.BucketEncryption.S3_MANAGED,
-      enforceSSL: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
-      versioned: false,
-    });
-
-    // CloudFront用アクセスログバケット
-    const cloudFrontAccessLogBucket = new s3.Bucket(this, 'CloudFrontAccessLogBucket', {
-      accessControl: s3.BucketAccessControl.LOG_DELIVERY_WRITE,
-      blockPublicAccess: new s3.BlockPublicAccess({
-        blockPublicAcls: true,
-        blockPublicPolicy: true,
-        ignorePublicAcls: true,
-        restrictPublicBuckets: true,
-      }),
-      bucketName: `${props.envName}-heros-cloudfront-accesslog-bucket`,
-      encryption: s3.BucketEncryption.S3_MANAGED,
-      enforceSSL: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
-      versioned: false,
-    });
-
-    // WEBサイトホスティング用S3バケット
-    const hostingBucket = new s3.Bucket(this, 'HerosWebsiteHostingBucket', {
+    // S3 bucket for web site hosting
+    const myHostingBucket = new s3.Bucket(this, 'HostingBucket', {
       autoDeleteObjects: true,
-      blockPublicAccess: new s3.BlockPublicAccess({
-        blockPublicAcls: true,
-        blockPublicPolicy: true,
-        ignorePublicAcls: true,
-        restrictPublicBuckets: true,
-      }),
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       bucketName: `${props.envName}-heros-website-hosting-bucket`,
       encryption: s3.BucketEncryption.S3_MANAGED,
+      bucketKeyEnabled: true,
+      objectLockEnabled: false,
       enforceSSL: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      serverAccessLogsBucket: serverAccessLogBucket,
       versioned: false,
     });
 
-    /* Route53 */
-    const publicHostedZone = new route53.PublicHostedZone(this, 'PublicHostedZone', {
-      zoneName: `testHostedZone`, // ホストゾーン名は修正する。
-    });
-
-    /* ACM */
-    const certificate = new acm.Certificate(this, 'Certificate', {
-      domainName: `testDomain`, // ドメイン名は修正する。
-    });
-
-    /* CloudFront */
-    const cloudfrontDistribution = new cloudfront.Distribution(this, 'CloudfrontDistribution', {
-      defaultRootObject: "index.html", // 適宜ファイル名を修正する。
-      errorResponses: [
-        {
-          ttl: cdk.Duration.minutes(1),
-          httpStatus: 403,
-          responseHttpStatus: 403,
-          responsePagePath: "/error.html",
-        },
-        {
-          ttl: cdk.Duration.minutes(1),
-          httpStatus: 404,
-          responseHttpStatus: 404,
-          responsePagePath: "/error.html",
-        },
-      ],
+    // CloudFront
+    const myCloudfrontDistribution = new cloudfront.Distribution(this, 'CloudfrontDistribution', {
+      defaultRootObject: "index.html",
+      enabled: true,
+      enableIpv6: true,
+      enableLogging: false,
+      logIncludesCookies: false,
+      publishAdditionalMetrics: false,
+      httpVersion: cloudfront.HttpVersion.HTTP2,
+      priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,      
       defaultBehavior: {
-        origin: cloudfront_origins.S3BucketOrigin.withOriginAccessControl(hostingBucket),
+        origin: cloudfront_origins.S3BucketOrigin.withOriginAccessControl(myHostingBucket),
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.ALLOW_ALL,
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
-        cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD,
         cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-        responseHeadersPolicy: cloudfront.ResponseHeadersPolicy.SECURITY_HEADERS,
       },
-      httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
-      priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,
-      domainNames: [ publicHostedZone.zoneName ],
-      certificate: certificate,
-      logBucket: cloudFrontAccessLogBucket,
     });
 
-    // cdk-nagエラー抑止
-    NagSuppressions.addResourceSuppressions(cloudFrontAccessLogBucket,
+    // Bucket Policy
+    const myHostingBucketPolicy = new s3.CfnBucketPolicy(this, 'HostingBucketPolicy', {
+      bucket: myHostingBucket.bucketName,
+      policyDocument: {
+        Version: '2012-10-17',
+        Statement: [
+          {
+            Sid: 'AllowCloudFrontServicePrincipal',
+            Effect: 'Allow',
+            Principal: {
+              Service: 'cloudfront.amazonaws.com',
+            },
+            Action: 's3:GetObject',
+            Resource: `${myHostingBucket.bucketArn}/*`,
+            Condition: {
+              StringEquals: {
+                'AWS:SourceArn': myCloudfrontDistribution.distributionArn,
+              },
+            }
+          },
+        ],
+      },
+    })
+
+    // cdk-nag suppressions
+    NagSuppressions.addResourceSuppressions(myHostingBucket,
       [
-        {id: 'AwsSolutions-S1', reason: 'no server access log to be enabled'}
+        {id: 'AwsSolutions-S1', reason: 'no server access log is needed'}
       ],
       true,
     );
     
-    // NagSuppressions.addResourceSuppressions(cloudFrontAccessLogBucket,
-    //   [
-    //     {id: '', reason: '', appliesTo: ['']}
-    //   ],
-    //   true,
-    // );
+    NagSuppressions.addResourceSuppressions(myCloudfrontDistribution,
+      [
+        {id: 'AwsSolutions-CFR3', reason: 'no access log is needed'},
+        {id: 'AwsSolutions-CFR4', reason: 'no security policy is needed'},
+      ],
+      true,
+    );
+
+    NagSuppressions.addResourceSuppressions(myHostingBucketPolicy,
+      [
+        {id: 'AwsSolutions-S10', reason: 'aws:SecureTransport condition is not needed'},
+      ],
+      true,
+    );
   }
 }
